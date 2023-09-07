@@ -1,0 +1,118 @@
+Warning: Please enter these instructions manually without copy and paste!
+
+---------------------------------------------------------------------------------
+
+Chapter 1.2 Feedback Linearisation Controller Examples
+
+−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+The Nonlinear systems should be written in the following
+form−−Feedback Linearization Controller for a class of
+Nonlinear systems−−State space equations
+x=f(x)+g(x)u
+−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+Parmeters
+parameters =
+Empty string: 1−by−0
+Number of states:=2
+Number of inputs:=1
+The vector f(x):=[x2;−sin(x1)]
+The vector g(x):=[0;1]
+The output variables:=x2
+
+-------------------------------------------------------------------------------
+
+Chapter 1.3 Illustrative examples
+1.3.1 Aircraft altitude dynamics
+
+−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+The Nonlinear systems should be written in the following
+form−−Feedback Linearization Controller for a class of
+Nonlinear systems−−State space equations
+x=f(x)+g(x)u
+−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+parameters =
+Empty string: 1−by−0
+Number of states:=4
+Number of inputs:=1
+The vector f(x):=[x2;−4*x2−4*x1;x4;6*x1]
+The vector g(x):=[0;3;0;−1];
+The output variables:=x3
+
+---------------------------------------------------------------------------------
+
+1.3.2 Asynchronous motor speed control
+
+−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+The Nonlinear systems should be written in the following
+form−−Feedback Linearization Controller for a class of
+Nonlinear systems−−State space equations
+x=f(x)+g(x)u
+−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+Parameters Tl gamma K Tr p fm Jm Lr M Ls sigma
+
+parameters =
+Tl gamma K Tr p fm Jm Lr M Ls sigma
+Number of states:=5
+Number of inputs:=2
+The vector f(x):=[−gamma*x1+(K/Tr)*x3+p*K*x5*x4;−gamma*x2+(K/Tr)*x4−p*K*x5*x3;(M/Tr)*x1−(1/Tr)*x3−p*x5*x4;(M/Tr)*x2−(1/Tr)*x4+p*x5*x3;p*(M/(Jm*Lr))*(x3*x2−x4*x1)−(fm/Jm)*x5−Tl/Jm]
+The vector g(x):=[1/(sigma*Ls) 0;0 1/(sigma*Ls);0 0;0 0;0 0]
+The output variables:=[x3ˆ2+x4ˆ2;x5]
+
+----------------------------------------------------------------------------------
+
+Chapter 2 Sliding Mode Control
+2.1 Sliding mode control examples for SISO Systems
+2.1.1 Van der Pol system
+
+−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+The Nonlinear systems should be written in the following
+form−−Sliding Mode Controller for a class of Nonlinear
+systems−−State space equations
+x=f(x)+gu
+−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+Number of states:=2
+Number of inputs:=1
+Parameters e
+parameters =
+e
+The vector f(x):=[x2;−x1+e*(1−x1ˆ2)*x2]
+The vector g(x):=[0;1]
+The output variables:=x1
+
+---------------------------------------------------------------------------------
+
+2.1.1 DC motor angular position control
+
+−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+The Nonlinear systems should be written in the following
+form−−Sliding Mode Controller for a class of Nonlinear
+systems−−State space equations
+x=f(x)+gu
+−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+Number of states:=3
+Number of inputs:=1
+Parameters b J km ke L R
+parameters =
+b J km ke L R
+The vector f(x):=[x2;−(b/J)*x2+(km/J)*x3;−(ke/L)*x2−(R/L)*x3]
+The vector g(x):=[0;0;1/L]
+The output variables:=x1
+
+-------------------------------------------------------------------------------
+
+2.2 Sliding mode control examples for MIMO Systems
+2.2.1 Permanent magnet synchronous motor speed control
+
+−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+The Nonlinear systems should be written in the following
+form−−Sliding Mode Controller for MIMO
+Nonlinear systems−−State space equations
+x=f(x)+gu
+−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+Number of states:=3
+Number of inputs:=2
+Parameters R Ld Lq phi f J p Tl
+The vector f(x):=[−(R/Ld)*x1+p*(Ld/Lq)*x2*x3;−(R/Lq)*x2−p*(Lq/Ld)*x1*x3−p*phi/Ld;p*(phi/J)*x2−p*((Lq−Ld)/J)*x1*x2−(f/J)*x3−Tl/J]
+The vector g(x):=[(1/Ld) 0;0 (1/Lq);0 0]
+The output variables:=[x1;x3]
+
